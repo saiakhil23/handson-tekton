@@ -5,13 +5,13 @@ FROM node:18
 WORKDIR /usr/src/app
 
 # Copy dependency files first
-COPY package*.json ./
+COPY app/package*.json ./
 
 # Install app dependencies
 RUN npm install --production
 
 # Copy app source code
-COPY . .
+COPY app/* .
 
 # Expose the app port
 EXPOSE 3000
